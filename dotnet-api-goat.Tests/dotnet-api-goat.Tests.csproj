@@ -66,7 +66,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="test_with_iast.bat" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dotnet-api-goat\dotnet-api-goat.csproj">
