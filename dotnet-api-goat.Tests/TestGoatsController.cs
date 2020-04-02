@@ -64,19 +64,64 @@ namespace dotnet_api_goat.Tests
         #endregion
 
         [TestMethod]
-        public void PostGoat_ShouldReturnDirectoryListing()
+        public void GetFile_ShouldReturnNotFound()
         {
             var controller = new GoatsController();
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            var response = controller.PostCommand("dir C:\\");
+            var response = controller.GetFile("no_file.json");
+
+            Assert.IsNotNull(response);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.NotFound);
+        }
+
+        [TestMethod]
+        public void GetFile_ShouldReturnFileContent()
+        {
+            var controller = new GoatsController();
+            controller.Request = new HttpRequestMessage();
+            controller.Configuration = new HttpConfiguration();
+
+            var response = controller.GetFile("dotnet-api-goat.Tests.dll.config");
+
+            Assert.IsNotNull(response);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            string fileContent;
+            Assert.IsTrue(response.TryGetContentValue<String>(out fileContent));
+            Assert.IsTrue(fileContent.Contains("configuration"));
+        }
+
+        [TestMethod]
+        public void GetCommand_ShouldReturnDirectoryListing()
+        {
+            var controller = new GoatsController();
+            controller.Request = new HttpRequestMessage();
+            controller.Configuration = new HttpConfiguration();
+
+            var response = controller.GetCommand("dir");
 
             Assert.IsNotNull(response);
             Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
             string commandOutput;
             Assert.IsTrue(response.TryGetContentValue<String>(out commandOutput));
             Assert.IsTrue(commandOutput.Contains("Directory of C:\\"));
+        }
+
+        [TestMethod]
+        public void GetEcho_ShouldReturnHtml()
+        {
+            var controller = new GoatsController();
+            controller.Request = new HttpRequestMessage();
+            controller.Configuration = new HttpConfiguration();
+
+            var response = controller.GetEcho("hello");
+
+            Assert.IsNotNull(response);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            string htmlOutput;
+            Assert.IsTrue(response.TryGetContentValue<String>(out htmlOutput));
+            Assert.IsTrue(htmlOutput.Equals("<p>You sent this: hello</p>"));
         }
     }
 }
