@@ -6,7 +6,7 @@ For %%a IN (*.sln) DO Set PROJECT_NAME=%%~na
 REM Set the path to the IAST Agent.
 SET IASTAGENT_PATH=c:\iast\iast-dev\out\agent\Debug\dotnet
 
-REM Source the Visual Studio command line environment, if not already present.
+REM Source the Visual Studio developer command line environment, if not already present.
 IF NOT DEFINED DevEnvDir (
     CALL "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\Tools\VsDevCmd.bat"
 )

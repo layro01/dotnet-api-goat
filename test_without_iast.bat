@@ -3,7 +3,7 @@
 REM Set a PROJECT_NAME variable based on the solution name.
 For %%a IN (*.sln) DO Set PROJECT_NAME=%%~na
 
-REM Source the Visual Studio command line environment, if not already present.
+REM Source the Visual Studio developer command line environment, if not already present.
 IF NOT DEFINED DevEnvDir (
     CALL "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\Tools\VsDevCmd.bat"
 )
