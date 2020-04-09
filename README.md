@@ -27,6 +27,6 @@ test.bat
 You should see that 4 tests ran successfully.
 
 2. To run the tests with IAST enabled, do the following:
-* Edit the batch file and check the value of `IASTAGENT_PATH`.
-* Run `test_with_iast.bat`.
+** Edit the batch file and check the value of `IASTAGENT_PATH`.
+** Run `test_with_iast.bat`.
 Once this completes, you should see a file called `dotnet-api-goat-info.log` created in the root directory of the project containing the IAST results associated with the test run.
