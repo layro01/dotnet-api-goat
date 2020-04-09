@@ -22,7 +22,7 @@ To use this sample, do the following:
 ```dos
 git clone https://github.com/layro01/dotnet-api-goat.git
 cd dotnet-api-goat
-test_without_iast.bat
+test.bat
 ```
 You should see that 4 tests ran successfully.
 
