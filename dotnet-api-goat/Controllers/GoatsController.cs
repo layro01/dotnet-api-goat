@@ -46,7 +46,7 @@ namespace dotnet_api_goat.Controllers
         /// <returns>The standard output of the command.</returns>
         /// <cwe_id>CWE-78</cwe_id>
         /// <cwe_description>OS Command Injection</cwe_description>
-        /// <cwe_exploit_url>https://localhost:44381/api/goats?command=dir</cwe_exploit_url>
+        /// <cwe_exploit_url>https://localhost:44381/api/goats/command?command=dir</cwe_exploit_url>
         /// <cwe_status>NOT_IMPLEMENTED</cwe_status>
         public HttpResponseMessage GetCommand(string command)
         {

@@ -10,8 +10,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E56BD508-5AEF-41E0-83CC-162BF83D6986}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		run.bat = run.bat
+		run_with_iast.bat = run_with_iast.bat
+		test.bat = test.bat
 		test_with_iast.bat = test_with_iast.bat
-		test_without_iast.bat = test_without_iast.bat
 	EndProjectSection
 EndProject
 Global

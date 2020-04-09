@@ -1,4 +1,5 @@
 @ECHO OFF
+SETLOCAL
 
 REM Set a PROJECT_NAME variable based on the solution name.
 For %%a IN (*.sln) DO Set PROJECT_NAME=%%~na
