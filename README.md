@@ -12,7 +12,7 @@ You will need to have the following in order to use this sample:
 - Windows 10
 - Visual Studio 2019 (with ASP.NET and Web Tools installed). 
 
-Note that you can use other versions of Visual Studio, but you will need to update the sourcing of the Visual Studio Developer command prompt environment in the files `test_with_iast.bat` and `test_without_iast.bat` to the correct batch file for your version.
+Note that you can use other versions of Visual Studio, but you will need to update the sourcing of the Visual Studio Developer command prompt environment in the files `test.bat` and `test_without_iast.bat` to the correct batch file for your version.
 
 ## Setup
 To use this sample, do the following:
