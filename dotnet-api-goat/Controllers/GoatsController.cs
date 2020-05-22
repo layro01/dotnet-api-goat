@@ -72,7 +72,7 @@ namespace dotnet_api_goat.Controllers
         /// <cwe_status>NOT_IMPLEMENTED</cwe_status>
         public HttpResponseMessage GetEcho(string text)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, "<p>You sent this: " + text + "</p>");
+            return Request.CreateResponse(HttpStatusCode.OK, text);
         }
     }
 }
