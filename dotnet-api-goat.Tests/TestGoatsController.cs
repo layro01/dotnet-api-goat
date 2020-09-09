@@ -105,7 +105,7 @@ namespace dotnet_api_goat.Tests
             Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
             string commandOutput;
             Assert.IsTrue(response.TryGetContentValue<String>(out commandOutput));
-            Assert.IsTrue(commandOutput.Contains("Directory of C:\\"));
+            Assert.IsTrue(commandOutput.Contains("Directory of "));
         }
 
         [TestMethod]
@@ -121,7 +121,7 @@ namespace dotnet_api_goat.Tests
             Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
             string htmlOutput;
             Assert.IsTrue(response.TryGetContentValue<String>(out htmlOutput));
-            Assert.IsTrue(htmlOutput.Equals("<p>You sent this: hello</p>"));
+            Assert.IsTrue(htmlOutput.Equals("hello"));
         }
     }
 }
